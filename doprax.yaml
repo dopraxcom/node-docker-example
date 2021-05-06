@@ -1,0 +1,13 @@
+volumes:
+  - name:  http_root
+    mount: /var/www/html/
+
+services:
+  - mongodb:
+      tag: 3.6
+      volumes:
+        - name: mongodb_vol
+          mount: /data/db
+      envs:
+        - MONGO_INITDB_ROOT_USERNAME: USERNAME
+        - MONGO_INITDB_ROOT_PASSWORD: PASSWORD
